@@ -34,16 +34,16 @@ ppt_project
 
 ## REQUIRED MODULES
 
-from pptx import Presentation
-from pptx.util import Pt, Inches
-from pptx.enum.text import PP_ALIGN
-from pptx.dml.color import RGBColor
-from pptx.enum.shapes import MSO_SHAPE
-from PIL import Image
-import requests
-from io import BytesIO
-import matplotlib.pyplot as plt
-from wordcloud import WordCloud
+- from pptx import Presentation
+- from pptx.util import Pt, Inches
+- from pptx.enum.text import PP_ALIGN
+- from pptx.dml.color import RGBColor
+- from pptx.enum.shapes import MSO_SHAPE
+- from PIL import Image
+- import requests
+- from io import BytesIO
+- import matplotlib.pyplot as plt
+- from wordcloud import WordCloud
 
 ## INSTALLATION OF THE MODULES
 
