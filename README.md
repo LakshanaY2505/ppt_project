@@ -3,7 +3,32 @@
 ## DESCRIPTION
 
 ## FILE STRUCTURE
-
+```
+ppt_project
+├── .gitignore                    # Git ignore rules
+├── README.md                     # Project documentation
+├── complete_code.py              # Main program code
+│
+├── Charts (code files)/          # Folder with chart-related Python code
+│   ├── barChart_code.py          # Code for generating the bar chart
+│   └── wordcloud_code.py         # Code for generating the word cloud
+│
+└── Images/                       # Images used in the project
+    ├── bg.jpg
+    ├── cd1.jpg
+    ├── cd2.jpg
+    ├── cd3.jpg
+    ├── groovesharklogo.png
+    ├── licensingFees.png
+    ├── musicControls.png
+    ├── orangeVinyl.png
+    ├── red cover.jpg
+    ├── redVinyl.png
+    ├── tameImpala.jpg
+    ├── vinyl.png
+    ├── wordcloud.png
+    └── yellowVinyl.png
+```
 
 
 
