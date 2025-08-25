@@ -218,7 +218,7 @@ Open a terminal or command prompt and run:
 - Added a title text box and content text box 
 
 2. *Design*
-- Three cards are created:
+- Three cards created:
   - Title Card (Rounded Rectangle)
   - Music Player Controls (Text Box)
   - Content Card (Rounded Rectangle)
