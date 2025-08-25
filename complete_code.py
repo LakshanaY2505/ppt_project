@@ -16,7 +16,7 @@ slide_width = ppt.slide_width
 slide_height = ppt.slide_height 
 
 #To retrieve the slides (0:title slide, 4:comparison, 5:title only, 6:blank)
-slide1_reg= ppt.slide_layouts[0] 
+slide1_reg= ppt.slide_layouts[6] 
 slide_toc_reg = ppt.slide_layouts[5]
 slide2_reg = ppt.slide_layouts[6] 
 slide3_reg = ppt.slide_layouts[6] 
@@ -44,8 +44,68 @@ slide_references = ppt.slides.add_slide(slide_references_reg)
 # ----------------------------
 # Slide 1 : Title slide 
 # ----------------------------
-Heading= slide1.shapes.title 
-Heading.text = "GrooveShark"
+#Add a background color 
+bg = slide1.background
+fill= bg.fill
+fill.solid()
+fill.fore_color.rgb = RGBColor(228, 108, 10)
+#Adding circles
+left1=2.5
+for j in range(2):
+    circle = slide1.shapes.add_shape(9, Inches(left1), Inches(5), Inches(2), Inches(2))
+    fill = circle.fill
+    fill.solid()
+    fill.fore_color.rgb = RGBColor(255,255,255)
+    outline = circle.line
+    outline.color.rgb = RGBColor(255,255,255)
+    left1+=3.5
+
+left2 =0
+for i in range(3):
+    circle = slide1.shapes.add_shape(9, Inches(left2), Inches(4.5), Inches(3), Inches(3))
+    fill = circle.fill
+    fill.solid()
+    fill.fore_color.rgb = RGBColor(255,255,255)
+    outline = circle.line
+    outline.color.rgb = RGBColor(255,255,255)
+    left2+=3.5
+
+#Adding a rectangle 
+rectangle = slide1.shapes.add_shape(1, Inches(0), Inches(6), Inches(10), Inches(2))
+fill = rectangle.fill
+fill.solid()
+fill.fore_color.rgb = RGBColor(255,255,255)
+outline = rectangle.line
+outline.color.rgb = RGBColor(255,255,255)
+
+#adding logo 
+logo = slide1.shapes.add_picture('Images/groovesharklogo.png', Inches(4), Inches(0.5), Inches(2), Inches(2))
+
+#adding a textbox
+textbox = slide1.shapes.add_textbox(Inches(3.7), Inches(2.5), Inches(8), Inches(1.5))
+tf=textbox.text_frame
+p = tf.paragraphs[0]
+p.text="Search for music"
+run = p.runs[0] 
+p.font.size = Pt(25)
+p.font.color.rgb = RGBColor(255,255,255)
+
+#creating a search bar
+rect = slide1.shapes.add_shape(5, Inches(2), Inches(3.5), Inches(6), Inches(0.5))
+fill = rect.fill
+fill.solid()
+fill.fore_color.rgb = RGBColor(255,255,255)
+line = rect.line
+line.color.rgb = RGBColor(255, 255, 255)
+
+#Adding a text box for names
+textbox=slide1.shapes.add_textbox(Inches(2), Inches(3.5), Inches(6), Inches(0.5))
+tf=textbox.text_frame
+p=tf.paragraphs[0]
+p.text="By Lakshana, Kanchan, Tamara"
+runs=p.runs[0]
+runs.font.color.rgb = RGBColor(0,0,0)
+runs.font.size = Pt(20)
 
 # -------------------------------
 # Slide 1.2 : Table of contents 
@@ -146,7 +206,7 @@ fill2.fore_color.rgb = RGBColor(233,113,50) #dark red color
 outline1 = rectangle2.line
 outline1.color.rgb = RGBColor(233,113,50) 
 
-rectangle3= slide2.shapes.add_shape(1,Inches(10),Inches(0),Inches(2),Inches(7.5))
+rectangle3= slide2.shapes.add_shape(1,Inches(8),Inches(0),Inches(2),Inches(7.5))
 fill=rectangle3.fill
 fill.solid()
 fill.fore_color.rgb = RGBColor(192,0,0) #dark red color
