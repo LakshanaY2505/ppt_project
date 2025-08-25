@@ -212,7 +212,33 @@ Open a terminal or command prompt and run:
 - Adjusts the WordCloud image position and size to align perfectly within the slide.
 
 ## SLIDE 7 - LESSONS LEARNT
+1. *Slide Layout*
+- slide_layouts[6] → Blank
+- Background image: bg.jpg, stretched to full slide size.
+- Added a title text box and content text box 
+
+2. *Design*
+- Three cards are created:
+  - Title Card (Rounded Rectangle)
+  - Music Player Controls (Text Box)
+  - Content Card (Rounded Rectangle)
+- Each card has a fixed width and height
+
 ## SLIDE 8 - LEGACY
+1. *Slide Layout*
+- slide_layouts[6] → Blank
+- Contains title and content textbox 
+
+2. *Design*
+- Title texbox - center aligned, Font: Constantia, 40 pt, Bold, Dark Gray
+- Subtitle textbox - center aligned, Font: Constantia, 28 pt, Bold, Dark Gray
+- Content textbox - positioned below the title, word wrapped enabled, center aligned, Font: Arial, 20 pt, Bold, Dark Gray
+
+3. *Table*
+- A 5×5 table compares Grooveshark with Spotify, YouTube Music, and SoundCloud.
+- Conatins formating for header row, header column (first column), data cells (special formating for symbols)
+
+
 ## SLIDE 9 - REFERENES
 1. *Slide Layout*
  - Uses a *Blank layout* (slide_layouts[5]) for complete flexibility.
