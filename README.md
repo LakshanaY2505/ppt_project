@@ -1,6 +1,9 @@
 # GROOVESHARK
 
 ## DESCRIPTION
+This project creates an automated PowerPoint presentation using Python's `python-pptx` library to analyze the rise and fall of GrooveShark, a pioneering online music streaming service that operated from 2007 to 2015.
+
+The script demonstrates how to programmatically add slides, insert images, and format text using Python, making it a practical example for automating presentation creation.
 
 ## FILE STRUCTURE
 ```
