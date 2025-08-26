@@ -239,7 +239,7 @@ Open a terminal or command prompt and run:
 - Conatins formating for header row, header column (first column), data cells (special formating for symbols)
 
 
-## SLIDE 9 - REFERENES
+## SLIDE 9 - REFERENCES
 1. *Slide Layout*
  - Uses a *Blank layout* (slide_layouts[5]) for complete flexibility.
  - Adds a main slide title: "REFERENCES".
