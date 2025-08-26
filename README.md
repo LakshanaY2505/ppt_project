@@ -11,6 +11,7 @@ ppt_project
 ├── .gitignore                    # Git ignore rules
 ├── README.md                     # Project documentation
 ├── complete_code.py              # Main program code
+├── Grooveshark.pptx             # PowerPoint presentation file
 │
 ├── Charts (code files)/          # Folder with chart-related Python code
 │   ├── barChart_code.py          # Code for generating the bar chart
