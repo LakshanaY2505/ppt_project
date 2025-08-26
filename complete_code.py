@@ -70,6 +70,8 @@ for i in range(3):
     outline.color.rgb = RGBColor(255,255,255)
     left2+=3.5
 
+slide1.shapes.add_picture("Images/navBar.png", 0, 0, width=slide_width)
+
 #Adding a rectangle 
 rectangle = slide1.shapes.add_shape(1, Inches(0), Inches(6), Inches(10), Inches(2))
 fill = rectangle.fill
@@ -78,20 +80,22 @@ fill.fore_color.rgb = RGBColor(255,255,255)
 outline = rectangle.line
 outline.color.rgb = RGBColor(255,255,255)
 
-#adding logo 
-logo = slide1.shapes.add_picture('Images/groovesharklogo.png', Inches(4), Inches(0.5), Inches(2), Inches(2))
+# Calculate centered position
+logo_width = Inches(7)
+left = (slide_width - logo_width) / 2
+top = Inches(0.2)
 
-#adding a textbox
-textbox = slide1.shapes.add_textbox(Inches(3.7), Inches(2.5), Inches(8), Inches(1.5))
-tf=textbox.text_frame
-p = tf.paragraphs[0]
-p.text="Search for music"
-run = p.runs[0] 
-p.font.size = Pt(25)
-p.font.color.rgb = RGBColor(255,255,255)
+# Add picture
+logo = slide1.shapes.add_picture(
+    "Images/gsLogo.png",
+    left,
+    top,
+    width=Inches(7)
+)
 
+top_position = Inches(2.5) 
 #creating a search bar
-rect = slide1.shapes.add_shape(5, Inches(2), Inches(3.5), Inches(6), Inches(0.5))
+rect = slide1.shapes.add_shape(5, Inches(2), top_position, Inches(6), Inches(0.5))
 fill = rect.fill
 fill.solid()
 fill.fore_color.rgb = RGBColor(255,255,255)
@@ -99,13 +103,14 @@ line = rect.line
 line.color.rgb = RGBColor(255, 255, 255)
 
 #Adding a text box for names
-textbox=slide1.shapes.add_textbox(Inches(2), Inches(3.5), Inches(6), Inches(0.5))
+textbox=slide1.shapes.add_textbox(Inches(2), top_position, Inches(6), Inches(0.5))
 tf=textbox.text_frame
 p=tf.paragraphs[0]
 p.text="By Lakshana, Kanchan, Tamara"
+p.alignment = PP_ALIGN.CENTER  
 runs=p.runs[0]
 runs.font.color.rgb = RGBColor(0,0,0)
-runs.font.size = Pt(20)
+runs.font.size = Pt(22)
 
 # -------------------------------
 # Slide 1.2 : Table of contents 

@@ -64,41 +64,55 @@ Open a terminal or command prompt and run:
 
 ```pip install python-pptx pillow requests matplotlib wordcloud```
 
-
-## SLIDE 0 - TABLE OF CONTENTS
+## SLIDE 1 - TITLE 
 1. *Slide Layout*
-  - Uses a Title Only layout slide_layouts[5]..
+- Uses Blank layout (slide_layouts[6])
+- Solid background colour added
+2. *Images*
+- Two images added in specific sizes 
+  - Navigation Bar: top of the screen, slide_width
+  - Grooveshark logo
+
+3. *Placeholders/Shapes*
+- Name bar - rectangle shape added with textbox, positioned under logo
+- Design - circle shape used to create cloud design, positioned at bottom of page 
+
+## SLIDE 1.1 - TABLE OF CONTENTS
+1. *Slide Layout*
+- Uses a Title Only layout slide_layouts[5]..
 
 2. *Placeholders/Shapes*
-  - shapes.title → Title text “TABLE OF CONTENTS”.
-  - Slide background → solid fill, dark red (RGB(90,3,10)).
-  - Nine alternating images (cd1.jpg, cd2.jpg, cd3.jpg) and textboxes for each TOC entry.
+- shapes.title → Title text “TABLE OF CONTENTS”.
+- Slide background → solid fill, dark red (RGB(90,3,10)).
+- Nine alternating images (cd1.jpg, cd2.jpg, cd3.jpg) and textboxes for each TOC entry.
 
 3.*Content*
-  - TOC_array = ["Introduction", "Problem", "Lessons", "Timeline", "Collapse", "Legacy", "Growth", "Cloud", "References"]
-  - Each entry is paired with an image (rotating between CD1/CD2/CD3) and a small white-text textbox.
+- TOC_array = ["Introduction", "Problem", "Lessons", "Timeline", "Collapse", "Legacy", "Growth", "Cloud", "References"]
+- Each entry is paired with an image (rotating between CD1/CD2/CD3) and a small white-text textbox.
 
 4.*Images*
- - Images/cd1.jpg, Images/cd2.jpg, Images/cd3.jpg.
-## SLIDE 1 - INTRODUCTION
+- Images/cd1.jpg, Images/cd2.jpg, Images/cd3.jpg.
+
+## SLIDE 2 - INTRODUCTION
 1. *Slide Layout* 
- - slide_layouts[6] → Blank.
+- slide_layouts[6] → Blank.
 
 2. *Shapes & Placeholders*
- - Background image: bg.jpg, stretched to full slide size.
- - Title textbox: → “INTRODUCTION” 
- - Yellow rectangle (content area): shape type 5 (Rectangle)
- - Text content textbox: 
-    - Grooveshark’s history, founders, and mission.
+- Background image: bg.jpg, stretched to full slide size.
+- Title textbox: → “INTRODUCTION” 
+- Yellow rectangle (content area): shape type 5 (Rectangle)
+- Text content textbox: 
+  - Grooveshark’s history, founders, and mission.
 
 3. *Sidebars*
- - Left: Two vertical rectangles (dark red + orange).
- - Right: Two vertical rectangles (dark red + orange).
+- Left: Two vertical rectangles (dark red + orange).
+- Right: Two vertical rectangles (dark red + orange).
 
 4.*Images*
- - Images/vinyl.png
- -  Images/tameimpala.jpg.
-## SLIDE 2 - TIMELINE
+- Images/vinyl.png
+-  Images/tameimpala.jpg.
+
+## SLIDE 3 - TIMELINE
 1. *Layout*
 - Uses Blank layout (slide_layouts[6]).
 
@@ -122,7 +136,7 @@ Open a terminal or command prompt and run:
  - Description boxes: Positioned near each year, filled with the same color as its circle.
 
 
-## SLIDE 3 - ESTABLISHMENT AND GROWTH
+## SLIDE 4 - ESTABLISHMENT AND GROWTH
 1. *Layout*
 - Uses Blank layout (slide_layouts[6]).
 
@@ -144,7 +158,7 @@ Open a terminal or command prompt and run:
     - Social features → music community feel.
     - Expanded reach to 150+ countries.
 
-## SLIDE 4 - PROBLEM
+## SLIDE 5 - PROBLEM
 1. *Slide Layout*
   - Uses the *Two Titles and Content* layout (slide_layouts[4]).
   - Adds a main title, two subtitles, and content placeholders.
@@ -170,7 +184,7 @@ Open a terminal or command prompt and run:
  - It was generated using *Python* and *Matplotlib* and then integrated into the slide.
  - The PowerPoint script imports this exact PNG file, creating a complete data-to-presentation pipeline.
 
-## SLIDE 5 - COLLAPSE
+## SLIDE 6 - COLLAPSE
 1. *Slide Layout*
  - Uses a *Blank layout* (slide_layouts[5]) for complete flexibility.
  - Adds a main slide title: "COLLAPSE".
@@ -196,7 +210,7 @@ Open a terminal or command prompt and run:
     - orangeVinyl.png
     - redVinyl.png
 
-## SLIDE 6 - A CLOUD OF CONTROVERSY
+## SLIDE 7 - A CLOUD OF CONTROVERSY
 1. *Slide Layout*
  - Uses a *Blank layout* (slide_layouts[5]) for complete flexibility.
  - Adds a main slide title: "A Cloud of Controversy".
@@ -211,7 +225,7 @@ Open a terminal or command prompt and run:
   - Font sizes ranging from 20 to 100.
 - Adjusts the WordCloud image position and size to align perfectly within the slide.
 
-## SLIDE 7 - LESSONS LEARNT
+## SLIDE 8 - LESSONS LEARNT
 1. *Slide Layout*
 - slide_layouts[6] → Blank
 - Background image: bg.jpg, stretched to full slide size.
@@ -224,7 +238,7 @@ Open a terminal or command prompt and run:
   - Content Card (Rounded Rectangle)
 - Each card has a fixed width and height
 
-## SLIDE 8 - LEGACY
+## SLIDE 9 - LEGACY
 1. *Slide Layout*
 - slide_layouts[6] → Blank
 - Contains title and content textbox 
@@ -238,8 +252,7 @@ Open a terminal or command prompt and run:
 - A 5×5 table compares Grooveshark with Spotify, YouTube Music, and SoundCloud.
 - Conatins formating for header row, header column (first column), data cells (special formating for symbols)
 
-
-## SLIDE 9 - REFERENCES
+## SLIDE 10 - REFERENCES
 1. *Slide Layout*
  - Uses a *Blank layout* (slide_layouts[5]) for complete flexibility.
  - Adds a main slide title: "REFERENCES".
