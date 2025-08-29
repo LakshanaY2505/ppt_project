@@ -26,7 +26,7 @@ slide6_reg = ppt.slide_layouts[5]
 slide_wordcloud_reg = ppt.slide_layouts[5]
 slide8_reg = ppt.slide_layouts[6] 
 slide9_reg = ppt.slide_layouts[6]
-slide_references_reg = ppt.slide_layouts[5]
+slide_references_reg = ppt.slide_layouts[6]
 
 #Adding slides to the presentation 
 slide1 = ppt.slides.add_slide(slide1_reg) 
@@ -59,14 +59,20 @@ COLORS = {
     "oxblood" : RGBColor(56,2,6)
 }
 
+def add_bg(slide, color=None, image_path=None):
+    bg = slide.background.fill
+    if image_path:
+        picture=slide.shapes.add_picture(image_path, 0, 0, ppt.slide_width, ppt.slide_height)
+        slide.shapes._spTree.remove(picture._element)
+        slide.shapes._spTree.insert(2, picture._element)
+    elif color:
+        bg.solid()
+        bg.fore_color.rgb = color
 # ----------------------------
 # Slide 1 : Title slide 
 # ----------------------------
 #Add a background color 
-bg = slide1.background
-fill= bg.fill
-fill.solid()
-fill.fore_color.rgb = COLORS["orange"]
+add_bg(slide1,color=RGBColor(228,108,10))
 #Adding circles
 left1=2.5
 for j in range(2):
@@ -142,9 +148,7 @@ p = tf.paragraphs[0]  # get first paragraph
 run = p.runs[0]       # get first run (the actual text)
 p.font.name = 'Constantia'
 run.font.color.rgb = COLORS["white"]
-bg=slide_toc.background.fill
-bg.solid()
-bg.fore_color.rgb = COLORS["crimson"]
+add_bg(slide_toc,color=RGBColor(90, 3, 10))
 x=0.1
 y=0.1
 z=0.1
@@ -182,7 +186,7 @@ for i in range(9):
 # ----------------------------
 # Slide 2 : Introduction 
 # ----------------------------
-slide2.shapes.add_picture('Images/bg.jpg', 0, 0, slide_width, slide_height) #adding a bg image (starts from the left=0 inches, top = 0 inches, and spans the full width and height of the screen)
+add_bg(slide2,image_path='Images/bg.jpg')
 
 # Adding the title of the slide 
 textbox = slide2.shapes.add_textbox(Inches(1), Inches(0.5), Inches(8), Inches(1)) 
@@ -270,7 +274,7 @@ cropped.save(output_stream, format="JPEG")
 output_stream.seek(0)
 
 # Adding title + content to the slide 
-slide3.shapes.add_picture(output_stream, 0, 0, width=slide_width, height=slide_height)
+add_bg(slide3,image_path=output_stream)
 textbox = slide3.shapes.add_textbox(Inches(1), Inches(0.5), Inches(8), Inches(1))
 tf = textbox.text_frame
 p=tf.paragraphs[0]
@@ -349,7 +353,7 @@ for i, (year,description) in enumerate(events):  #enumerate is used so that we c
 # Slide 4 : Growth
 # ----------------------------
 # Adding background image 
-slide4.shapes.add_picture('Images/bg.jpg', 0, 0, slide_width, slide_height)
+add_bg(slide4,image_path='Images/bg.jpg')
 # Adding shape 
 circle = slide4.shapes.add_shape(9, Inches(0.35), Inches(0.35), Inches(3), Inches(3)) 
 fill= circle.fill
@@ -415,17 +419,7 @@ run.font.color.rgb = COLORS["red"]
 
 
 # Adding the background image and sending it to the back
-background_image="Images/bg.jpg"
-background=slide5.shapes.add_picture(
-    background_image,
-    0,0, #Starts from the (0,0) position
-    width=ppt.slide_width,
-    height=ppt.slide_height
-)
-
-# Adding the background image to the bottom of the stack
-slide5.shapes._spTree.remove(background._element)
-slide5.shapes._spTree.insert(2, background._element)
+add_bg(slide5,image_path='Images/bg.jpg')
 
 # Adding the 2 subtitles
 title1 = slide5.placeholders[1]
@@ -607,10 +601,7 @@ for i, (title, content) in enumerate(slide6_array): #returns the index value and
 # Slide 7 : A Cloud of Controversy (WORDCLOUD)
 # ~check Charts folder to find Wordcloud code~
 # -----------------------------------------------
-fill = slide_wordcloud.background.fill
-fill.solid()  #Solid color for the background
-fill.fore_color.rgb = COLORS["crimson"]
-
+add_bg(slide_wordcloud,color=RGBColor(90, 3, 10))
 
 wordcloud_image="Images/wordcloud.png"
 slide_wordcloud.shapes.add_picture(
@@ -630,7 +621,7 @@ wordcloud_title.text_frame.paragraphs[0].runs[0].font.color.rgb=COLORS["white"]
 # ---------------------------
 # Slide 8 : Lessons Learnt
 # ---------------------------
-slide8.shapes.add_picture("Images/bg.jpg", Inches(0), Inches(0), slide_width, slide_height)
+add_bg(slide8,image_path='Images/bg.jpg')
 
 # Adding title to slide 
 title_left = Inches(0.5)
@@ -914,8 +905,7 @@ for i in range(1, cols):
 # Slide 10 : References
 # ---------------------------
 # Adding the background image 
-background_image="Images/bg.jpg"
-slide_references.shapes.add_picture(background_image,0,0,width=slide_width, height=slide_height)
+add_bg(slide_references,image_path='Images/bg.jpg')
 
 # Adding title + format
 References = slide_references.shapes.add_textbox(
