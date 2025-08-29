@@ -59,6 +59,27 @@ COLORS = {
     "oxblood" : RGBColor(56,2,6)
 }
 
+FONTS = {
+    "titleFont": {
+        "name": "Constantia",
+        "size": Pt(40),
+        "bold": True,
+        "italic": False
+    },
+    "subtitleFont": {
+        "name": "Aptos",
+        "size": Pt(28),
+        "bold": False,
+        "italic": True
+    },
+    "bodyFont": {
+        "name": "Aptos",
+        "size": Pt(12),
+        "bold": False,
+        "italic": False
+    }
+}
+
 def add_bg(slide, color=None, image_path=None):
     bg = slide.background.fill
     if image_path:
@@ -146,7 +167,7 @@ toc.text = "TABLE OF CONTENTS"
 tf = toc.text_frame   # get text frame inside the shape
 p = tf.paragraphs[0]  # get first paragraph
 run = p.runs[0]       # get first run (the actual text)
-p.font.name = 'Constantia'
+p.font.name = FONTS["titleFont"]["name"]
 run.font.color.rgb = COLORS["white"]
 add_bg(slide_toc,color=RGBColor(90, 3, 10))
 x=0.1
@@ -193,10 +214,10 @@ textbox = slide2.shapes.add_textbox(Inches(1), Inches(0.5), Inches(8), Inches(1)
 tf = textbox.text_frame
 p = tf.paragraphs[0]
 p.text = "INTRODUCTION"
-p.font.size = Pt(40)
+p.font.size = FONTS["titleFont"]["size"]
 p.font.color.rgb = COLORS["red"]
-p.font.bold = True
-p.font.name = 'Constantia'
+p.font.bold = FONTS["titleFont"]["bold"]
+p.font.name = FONTS["titleFont"]["name"]
 
 # Adding the content: 
 # 1- Rectangle design
@@ -216,8 +237,8 @@ for point in slide2_array:
     p.text = point  #sets the text of the paragraph to the current point
     p.font.size = Pt(13)  
     p.font.color.rgb = COLORS["black"]  #sets the font color to black
-    p.font.name = 'Aptos'  #sets the font to Aptos
-    p.space_after = Pt(12) 
+    p.font.name = FONTS["bodyFont"]["name"]  #sets the font to Aptos
+    p.space_after = FONTS["bodyFont"]["size"]
 # 3- Adding rectangles to the design 
 rectangle1= slide2.shapes.add_shape(1,Inches(0),Inches(0),Inches(0.5),Inches(7.5))
 fill1=rectangle1.fill
@@ -280,9 +301,9 @@ tf = textbox.text_frame
 p=tf.paragraphs[0]
 p.alignment = PP_ALIGN.CENTER
 p.text = "TIMELINE"
-p.font.size= Pt(40)
-p.font.name= 'Constantia'
-p.font.bold = True
+p.font.size= FONTS["titleFont"]["size"]
+p.font.name= FONTS["titleFont"]["name"]
+p.font.bold = FONTS["titleFont"]["bold"]
 p.font.color.rgb =COLORS["black"]
 events= [
     ("2006-2007","Founded in Florida as a peer-to-peer music sharing site."), 
@@ -368,10 +389,10 @@ p = tf.paragraphs[0]
 p.text = "GROWTH"
 p.alignment = PP_ALIGN.LEFT
 run = p.runs[0]
-run.font.size = Pt(40)
+run.font.size = FONTS["titleFont"]["size"]
 run.font.color.rgb = COLORS["black"]
-run.font.bold = True
-run.font.name = 'Constantia'
+run.font.bold = FONTS["titleFont"]["bold"]
+run.font.name = FONTS["titleFont"]["name"]
 
 # Adding content
 rectangle = slide4.shapes.add_shape(5,Inches(0.35), Inches(2), Inches(5.5), Inches(4))
@@ -412,9 +433,9 @@ Problem.text = "PROBLEM"
 run = Problem.text_frame.paragraphs[0].runs[0]
 
 # Set font properties
-run.font.name = "Constantia"
-run.font.size = Pt(40)          
-run.font.bold = True             
+run.font.name = FONTS["titleFont"]["name"]
+run.font.size = FONTS["titleFont"]["size"]          
+run.font.bold = FONTS["titleFont"]["bold"]             
 run.font.color.rgb = COLORS["red"]  
 
 
@@ -505,9 +526,9 @@ Collapse.text = "COLLAPSE"
 run = Collapse.text_frame.paragraphs[0].runs[0]
 
 # Set font properties
-run.font.name = 'Constantia'
-run.font.size = Pt(40)      
-run.font.bold = True             
+run.font.name = FONTS["titleFont"]["name"]
+run.font.size = FONTS["titleFont"]["size"]      
+run.font.bold = FONTS["titleFont"]["bold"]             
 run.font.color.rgb = COLORS["darkGray"]
 
 slide6_array = [ #3 tuples, the first element is the title and the second is the content
@@ -570,9 +591,9 @@ for i, (title, content) in enumerate(slide6_array): #returns the index value and
     # Content of the boxes
     p = text_frame.add_paragraph()
     p.text = content
-    p.font.size = Pt(12)
-    p.font.bold = False
-    p.font.name = 'aptos'
+    p.font.size = FONTS["bodyFont"]["size"]
+    p.font.bold = FONTS["bodyFont"]["bold"]
+    p.font.name = FONTS["bodyFont"]["name"]
     p.font.color.rgb = COLORS["white"]
     p.alignment = PP_ALIGN.CENTER
 
@@ -614,7 +635,7 @@ slide_wordcloud.shapes.add_picture(
 
 wordcloud_title=slide_wordcloud.shapes.title
 wordcloud_title.text="A CLOUD OF CONTROVERSY"
-wordcloud_title.text_frame.paragraphs[0].runs[0].font.name = 'constantia' #paragraph[0] is the first paragraph of information
+wordcloud_title.text_frame.paragraphs[0].runs[0].font.name = FONTS["titleFont"]["name"] #paragraph[0] is the first paragraph of information
 wordcloud_title.text_frame.paragraphs[0].runs[0].font.color.rgb=COLORS["white"]
 
 
@@ -641,9 +662,9 @@ run = p.add_run()
 run.text = "LESSONS LEARNT"    
 
 font = run.font
-font.name = 'Constantia'
-font.size = Pt(40)
-run.font.bold = True    
+font.name = FONTS["titleFont"]["name"]
+font.size = FONTS["titleFont"]["size"]
+run.font.bold = FONTS["titleFont"]["bold"]    
 font.color.rgb = COLORS["red"]
 
 # Adding content 
@@ -804,9 +825,9 @@ p1.alignment = PP_ALIGN.CENTER
 run1 = p1.add_run()
 run1.text = "LEGACY"
 font1 = run1.font
-font1.name = 'Constantia'
-font1.size = Pt(40)
-font1.bold = True
+font1.name = FONTS["titleFont"]["name"]
+font1.size = FONTS["titleFont"]["size"]
+font1.bold = FONTS["titleFont"]["bold"]
 font1.color.rgb = COLORS["darkGray"]
 
 # --- Subtitle ---
@@ -815,9 +836,9 @@ p2.alignment = PP_ALIGN.CENTER
 run2 = p2.add_run()
 run2.text = "~Influence on Modern Platforms~"
 font2 = run2.font
-font2.name = 'Constantia'
-font2.size = Pt(28)
-font2.bold = True
+font2.name = FONTS["titleFont"]["name"]
+font2.size = FONTS["subtitleFont"]["size"]
+font2.bold = FONTS["titleFont"]["bold"]
 font2.color.rgb = COLORS["darkGray"]
 
 
@@ -915,9 +936,9 @@ References = slide_references.shapes.add_textbox(
     Inches(1.5)   # height
 )
 References.text_frame.text = "REFERENCES"
-References.text_frame.paragraphs[0].font.size = Pt(40)
+References.text_frame.paragraphs[0].font.size = FONTS["titleFont"]["size"]
 References.text_frame.paragraphs[0].font.color.rgb = COLORS["red"]
-References.text_frame.paragraphs[0].font.name="Constantia"
+References.text_frame.paragraphs[0].font.name=FONTS["titleFont"]["name"]
 References.text_frame.paragraphs[0].alignment = PP_ALIGN.CENTER
 
 # Adding rounded rectangle shape
@@ -1010,3 +1031,4 @@ for i, link in enumerate(links):
 
 
 ppt.save('Grooveshark.pptx') 
+
