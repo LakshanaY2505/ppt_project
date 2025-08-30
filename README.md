@@ -7,7 +7,7 @@ The script demonstrates how to programmatically add slides, insert images, and f
 
 ## FILE STRUCTURE
 ```
-ppt_project
+ppt_project/
 ├── .gitignore                    # Git ignore rules
 ├── README.md                     # Project documentation
 ├── complete_code.py              # Main program code
