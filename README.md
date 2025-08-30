@@ -65,6 +65,16 @@ Open a terminal or command prompt and run:
 
 ```pip install python-pptx pillow requests matplotlib wordcloud```
 
+## COLOR PALETTE
+The presentation uses a predefined color palette stored in the ```COLORS``` dictionary. This ensures consistent branding and visual appeal across all slides.
+
+## TYPOGRAPHY SYSTEM
+The ```FONTS``` dictionary establishes a consistent typography hierarchy with three distinct font styles.
+
+## BACKGROUND MANAGEMENT
+The ```add_bg()``` function provides flexible background styling options for slides.
+
+
 ## SLIDE 1 - TITLE 
 1. *Slide Layout*
 - Uses Blank layout (slide_layouts[6])
