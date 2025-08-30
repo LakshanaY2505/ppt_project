@@ -254,7 +254,7 @@ The ```apply_font_style()``` applies typography styling to text runs with flexib
 
 2. *Features*
 - The wordcloud.png highlights key terms from Grooveshark’s legal controversies, emphasizing words like “lawsuit,” “violation,” and “shutdown” to visualize the main issues.
-- It was generated using  *Python, **WordCloud* and *Matplotlib* and then integrated into the slide.
+- It was generated using  *Python*, *WordCloud* and *Matplotlib* and then integrated into the slide.
 - The wordcloud is customized using:
   - Dark background (black) for contrast.
   - Red color palette (Reds colormap).
