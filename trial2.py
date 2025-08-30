@@ -158,8 +158,26 @@ FONTS = {
     },
     "bodyFont": {
         "name": "Aptos",
-        "size": Pt(12),
+        "size": Pt(14),
         "bold": False,
+        "italic": False
+    }, 
+    "bodyFont2": {
+        "name": "Calibri",
+        "size": Pt(18),
+        "bold": False,
+        "italic": False
+    },
+    "bodyFont3":{
+        "name": "Calibri",
+        "size": Pt(14),
+        "bold": True,
+        "italic": False
+    },
+     "bodyFont4":{
+        "name": "Arial",
+        "size": Pt(16),
+        "bold": True,
         "italic": False
     }
 }
@@ -232,7 +250,7 @@ for i, label in enumerate(TOC_array):
     slide_toc.shapes.add_picture(images[row], Inches(x), Inches(img_y), Inches(1.5), Inches(1.5))
 
     # Add the titles under the pictures
-    add_textbox(slide_toc, x - 0.2, txt_y, 1.5, 0.5, label, font="bodyFont", color="white", align=PP_ALIGN.CENTER)
+    add_textbox(slide_toc, x - 0.1, txt_y, 1.5, 0.5, label, font="bodyFont2", color="white", align=PP_ALIGN.CENTER)
 
 # ----------------------------
 # Slide 2 : Introduction 
@@ -355,7 +373,7 @@ for i, (year, description) in enumerate(events):
         slide3, 
         left=x_year, top=y_pos-0.3, width=2.5, height=0.5, 
         text=year,
-        font="bodyFont", color="black", align=PP_ALIGN.LEFT
+        font="bodyFont3", color="black", align=PP_ALIGN.LEFT
     )
 
     # Description textbox with background color
@@ -388,7 +406,7 @@ add_textbox(
 # Adding content rectangle
 add_rectangle(
     slide4,
-    left=0.35, top=2, width=5.5, height=4,
+    left=0.35, top=2, width=5.5, height=4.5,
     fill="black",outline="black",
     rounded=True
 )
@@ -644,7 +662,7 @@ for i, card in enumerate(card_data):
     
     # Title rectangle
     title_box = add_rectangle(slide8, card_left, cards_start_top, card_width, 0.5, fill="pumpkinOrange", rounded=True)
-    add_textbox(slide8, card_left, cards_start_top, card_width, 0.7, card["title"], font="bodyFont", color="black", align=PP_ALIGN.CENTER)
+    add_textbox(slide8, card_left, cards_start_top, card_width, 0.7, card["title"], font="bodyFont4", color="black", align=PP_ALIGN.CENTER)
     
     # Music controls
     if card["has_player"]:
@@ -777,4 +795,4 @@ for i, link in enumerate(links):
     circle = add_circle(slide_references, container_left + 0.2, rect_top + (small_rect_height - 0.4)/2, 0.4, fill="oxblood", outline="oxblood")
     add_textbox(slide_references, container_left + 0.2, rect_top + (small_rect_height - 0.4)/2, 0.4, 0.4, str(i+1), font="bodyFont", color="white", align=PP_ALIGN.CENTER)
 
-ppt.save('trial2.pptx') 
+ppt.save('Grooveshark.pptx') 
