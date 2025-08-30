@@ -246,7 +246,7 @@ add_textbox(
 
 # Main content shape and textbox
 add_rectangle(
-    slide2, left=1.25, top=2, width=6, height=4, fill="gold", outline="gold"
+    slide2, left=1.25, top=2, width=6, height=4, fill="gold", outline="gold", rounded=True
 )
 slide2_array = [
     "Grooveshark was an online music streaming service that launched in March 2006,long before Spotify and Apple Music became household names. It offered millions of tracks that users could search, stream, and share freely, making it a favorite hangout spot for music lovers around the world.",
@@ -376,7 +376,6 @@ add_bg(slide4, image_path='Images/bg.jpg') # Background image
 
 # Adding circles
 add_circle(slide4, left=0.35, top=0.35, size=3, fill="red", outline="red")
-add_circle(slide4, left=4.2, top=4, size=3, fill="flameOrange", outline="flameOrange")
 
 # Adding title
 add_textbox(
@@ -394,11 +393,13 @@ add_rectangle(
     rounded=True
 )
 
+add_circle(slide4, left=4.2, top=4, size=3, fill="flameOrange", outline="flameOrange")
+
 slide4.shapes.add_picture('Images/red cover.jpg', Inches(6), Inches(0), Inches(4), Inches(7.5)) # Adding image 
 
 # Array of the content
 slide4_array = [
-    "Grooveshark worked as a peer-to-peer network,letting users upload MP3s for others to listen to. It later transformed into a sleek web-based music streaming site.",
+    "Grooveshark worked as a peer-to-peer network, letting users upload MP3s for others to listen to. It later transformed into a sleek web-based music streaming site.",
     "Gained traction quickly because it offered free, on-demand music at a time when few services did Features like search, playlists, and community sharing made it stand out.",
     "Expanded with mobile apps, drawing comparisons to Spotify. By 2011, it had around 35 million users worldwide and a catalog of 15 million+ songs.",
     "Users could follow friends, share playlists, and even discover new artists, giving it a “music community” vibe.",
@@ -740,7 +741,7 @@ add_textbox(slide_references, 0.5, 0.5, 9, 1.5, "REFERENCES", font="titleFont", 
 # Container rectangle: centered it horizontally, positioned directly at the bottom of the slide
 container_left = (emu_to_inches(slide_width) - 5.5) / 2
 container_top = 2
-container = add_rectangle(slide_references, container_left, container_top, 5.5, 5, fill="fireBrick", rounded=True)
+container = add_rectangle(slide_references, container_left, container_top, 5.5, 5, fill="fireBrick", outline="fireBrick", rounded=True)
 
 # Adding an image on top of container 
 img_path = "Images/musicControls.png"
@@ -766,7 +767,7 @@ start_top = container_top + 1.7 # this adds the rectangles below the controls
 for i, link in enumerate(links):
     rect_top = start_top + i * (small_rect_height + rect_spacing)
     # 4 smaller rectangles
-    rect = add_rectangle(slide_references, container_left, rect_top, 5.5, small_rect_height, fill="darkRed", rounded=True)
+    rect = add_rectangle(slide_references, container_left, rect_top, 5.5, small_rect_height, fill="darkRed", outline= "darkRed", rounded=False)
     
     # Used to make the hyperlink clickable
     rect.click_action.hyperlink.address = link
