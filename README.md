@@ -74,6 +74,32 @@ The ```FONTS``` dictionary establishes a consistent typography hierarchy with th
 ## BACKGROUND MANAGEMENT
 The ```add_bg()``` function provides flexible background styling options for slides.
 
+Parameters:
+
+- **slide**: The slide object to modify
+- **color**: RGB color from the COLORS palette (optional)
+- **image_path**: Path to background image file (optional)
+
+
+## UNIT CONVERSION
+The ```emu_to_inches()``` function converts English Metric Units (EMUs) to inches.
+
+## SHAPE CREATION FUNCTIONS
+
+### Rectangle Creation
+The ```add_rectangle()``` function creates rectangular shapes with customizable styling options and returns a rectangle shape object.
+
+### Circle Creation
+The ```add_circle()``` function creates circular shapes with flexible color input options and returns a circle shape object.
+
+## TEXT MANAGEMENT FUNCTIONS
+
+### Text Box Creation
+The ```add_textbox()``` function creates text boxes with automatic formatting and multi-line support and returns a text box shape.
+
+### Font Style Application
+The ```apply_font_style()``` applies typography styling to text runs with flexible input options.
+
 
 ## SLIDE 1 - TITLE 
 1. *Slide Layout*
